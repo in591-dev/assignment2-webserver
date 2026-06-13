@@ -74,6 +74,7 @@ def webServer(port=13331):
       error_headers = error_status_line + error_server_header + error_connection_header + error_outputdata + b"\r\n"
       error_body = b"<html><head><title>404 Not Found</title></head><body><h1>404 Not Found</h1></body></html>"
       connectionSocket.sendall(error_headers + error_body)
+      connectionSocket.close()
 
       #Fill in end
 
